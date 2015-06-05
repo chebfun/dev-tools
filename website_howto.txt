@@ -6,7 +6,7 @@ Get in touch with   hrothgarrrr@gmail.com   for questions.
 
 Contents.
 
-    1. How to install the website on your machine
+    1. How to install the website on your machine.
     2. How to publish and example.
     3. How to publish a Guide chapter.
     4. How to add a news item.
@@ -84,7 +84,7 @@ Contents.
 
          $ cd _build
          $ git status
-         $ git add -u examples/*
+         $ git add examples/*.html examples/fun/*.html examples/fun/img/*.png
          $ git commit -m 'Publishing the example fun/HelloWorld'
 
 
@@ -121,7 +121,7 @@ Contents.
 
          $ cd _build
          $ git status
-         $ git add -u docs/guide/*
+         $ git add docs/guide/*.html docs/guide/img/*.png
          $ git commit -m 'Publishing a Guide chapter'
 
 
@@ -180,5 +180,5 @@ Contents.
 
          $ cd _build
          $ git status
-         $ git add -u index.html news/*
+         $ git add index.html news/*.html
          $ git commit -m 'Adding a news item'
