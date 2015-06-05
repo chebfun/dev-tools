@@ -4,6 +4,16 @@ Get in touch with   hrothgarrrr@gmail.com   for questions.
 ----------------------------------------------------------
 
 
+Contents.
+
+    1. How to install the website on your machine
+    2. How to publish and example.
+    3. How to publish a Guide chapter.
+    4. How to add a news item.
+
+
+* * *
+
 1.  HOW TO INSTALL THE WEBSITE ON YOUR MACHINE.
 
     Download the "chebsite_setup.m" script from the "chebfun/dev-tools" repo
@@ -79,7 +89,7 @@ Get in touch with   hrothgarrrr@gmail.com   for questions.
 
 
 
-2.  HOW TO PUBLISH A GUIDE CHAPTER.
+3.  HOW TO PUBLISH A GUIDE CHAPTER.
 
     The procedure for publishing a Guide chapter is basically the same as the
     procedure for publishing an Example.
@@ -116,7 +126,7 @@ Get in touch with   hrothgarrrr@gmail.com   for questions.
 
 
 
-2.  HOW TO ADD A NEWS ITEM.
+4.  HOW TO ADD A NEWS ITEM.
 
     To add a news item, create a Markdown file for the news item and then
     build the website.
