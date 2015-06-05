@@ -1,0 +1,174 @@
+WEBSITE HOW-TO
+Hrothgar, June 2015
+Get in touch with   hrothgarrrr@gmail.com   for questions.
+----------------------------------------------------------
+
+
+1.  HOW TO INSTALL THE WEBSITE ON YOUR MACHINE.
+
+    Download the "chebsite_setup.m" script from the "chebfun/dev-tools" repo
+    on GitHub. If you run the chebsite_setup script from a directory called
+    "my_folder", then the resulting directory structure for the website will
+    end up looking like this:
+
+        my_folder
+          |-- chebsite_setup.m
+          |-- chebsite
+          |     |-- _build
+          |     |-- ...
+          |-- examples
+          |-- guide
+
+    As you can see, the chebsite_setup script will create a few directories in
+    the place where it's executed. Two of those directories are for the
+    examples and guide repos (these are necessary in order to make examples or
+    publish Guide chapters). The final directory, called "chebsite" by
+    default, contains the website content and build files, and is tied to the
+    "chebfun/chebsite" Github repository.
+
+    A bit about the structure of the website: the directory "chebsite" itself
+    contains many Markdown files, some python files, and other content
+    necessary for the website (images, CSS, and so on). Any changes to the
+    website -- for instance, adding a news item or modifying the "about" page
+    -- should be made to Markdown (.md) files in the "chebsite" directory. The
+    procedure for publishing examples and Guide chapters is discussed below.
+
+    After changes are made, the website must be compiled, as per (2.ii) below.
+    Compiling the website mostly involves transforming the Markdown into HTML.
+    The output HTML is then stored in the "chebsite/_build" directory, which
+    is tied to the chebfun/chebfun.github.io repository on Github. (Indeed,
+    there is a git repo inside another git repo -- there is nothing wrong with
+    that.)
+
+    From there changes must be committed and pushed, as per (2.iii) below.
+
+
+
+2.  HOW TO PUBLISH AN EXAMPLE.
+
+    i.   From MATLAB, move to the directory my_folder/chebsite/examples and then
+         execute the make_example function:
+
+         >> cd chebsite/examples
+         >> make_example('fun', 'HelloWorld')
+
+         The final output should say "Done."
+
+    ii.  From a regular system terminal, move to the "chebsite" directory and
+         build the website. The script will output the names of all files
+         modified since the last time you built the website. (The first time
+         the build script runs, however, there will be a lot of output, since
+         all the output files are new.)
+
+         $ python BUILD.py
+
+         If you want to see your changes before committing them, run the
+         SERVE.py script, which runs the website locally on your machine.
+
+         $ python SERVE.py
+         $ open http://localhost:8000/examples
+
+    iii. If you're happy with these changes, Ctrl+C out of the server and then
+         commit your changes. To do this, move to the _build directory and use
+         git to commit and push.
+
+         $ cd _build
+         $ git status
+         $ git add -u examples/*
+         $ git commit -m 'Publishing the example fun/HelloWorld'
+
+
+
+2.  HOW TO PUBLISH A GUIDE CHAPTER.
+
+    The procedure for publishing a Guide chapter is basically the same as the
+    procedure for publishing an Example.
+
+    i.   From MATLAB, move to the directory my_folder/chebsite/docs/guide and
+         then execute the make_chapters function. The input to the function is
+         a vector of integers specifying which chapters to publish.
+
+         >> cd chebsite/docs/guide
+         >> make_chapters(2:4)          % Publishes chapters 2, 3, and 4.
+
+         The final output should say "Done."
+
+    ii.  The rest of the procedure is the same as for the Example case.
+         From a regular system terminal, move to the "chebsite" directory and
+         build the website.
+
+         $ python BUILD.py
+
+         If you want to see your changes before committing them, run the
+         SERVE.py script, which runs the website locally on your machine.
+
+         $ python SERVE.py
+         $ open http://localhost:8000/docs/guide
+
+    iii. If you're happy with these changes, Ctrl+C out of the server and then
+         commit your changes. To do this, move to the _build directory and use
+         git to commit and push.
+
+         $ cd _build
+         $ git status
+         $ git add -u docs/guide/*
+         $ git commit -m 'Publishing a Guide chapter'
+
+
+
+2.  HOW TO ADD A NEWS ITEM.
+
+    To add a news item, create a Markdown file for the news item and then
+    build the website.
+
+    i.   News items are stored in the "chebsite/news" directory. Take a look
+         at the existing news items for examples. (I usually just copy one of
+         the existing news items and then make the necessary changes.)
+
+         The title of the file must conform to the standard
+
+            YYYYMMDD-title-slug.md
+
+         in which
+
+            * YYYYMMDD is the date attached to the news item (this is simply
+              the date printed next to the news item's title -- the news item
+              is not scheduled for future publish if the date is in the
+              future);
+
+            * title-slug  is the version of the title that will appear in the
+              URL of the news item.
+
+         Inside the file there is a standard format, too. (All Markdown files
+         on the website use this format.) Inside the dashed "---" lines there
+         is some YAML, which is a very simple plaintext format for data. You
+         will see a "title" field, a "layout" field (which tells the website
+         what HTML page format to use), and a "snip" field, which contains a
+         brief summary of the news item for use on e.g. the home page.
+
+         After the second dashed "---" line is the body of the news item,
+         which is formatted using Markdown. You can also insert HTML in the
+         body if you like (for adding tables for pictures, whatever). Note
+         that Markdown is not parsed inside of HTML blocks.
+
+
+    ii.  Again, the rest of the procedure is the same as before.
+         From a regular system terminal, move to the "chebsite" directory and
+         build the website.
+
+         $ python BUILD.py
+
+         If you want to see your changes before committing them, run the
+         SERVE.py script, which runs the website locally on your machine.
+
+         $ python SERVE.py
+         $ open http://localhost:8000/news
+
+    iii. If you're happy with these changes, Ctrl+C out of the server and then
+         commit your changes. To do this, move to the _build directory and use
+         git to commit and push.
+
+         $ cd _build
+         $ git status
+         $ git add -u index.html news/*
+         $ git commit -m 'Adding a news item'
