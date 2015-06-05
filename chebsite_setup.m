@@ -1,7 +1,8 @@
 
 disp('First navigate to where you want the Chebfun website''s folder to be')
 disp('located, then run this script from there. For example, to set up the')
-disp('site at  ~/chebfun/chebsite,  copy this script to the folder "chebfun".')
+disp('site at  ~/my_folder/chebsite,  copy this script into "my_folder".')
+disp('Note that this script will also clone the Examples and Guide repos.')
 disp('Your current location is'), x = pwd; disp(['   ' x])
 disp(' ')
 goahead = input('Do you wish to set up the site here? y/n: ', 's');
