@@ -2,7 +2,7 @@ WEBSITE HOW-TO
 Hrothgar, June 2015
 Get in touch with   hrothgarrrr@gmail.com   for questions.
 ----------------------------------------------------------
-
+Modifications done by Javed on June 17, 2015
 
 Contents.
 
@@ -87,6 +87,13 @@ Contents.
          $ git add examples/*.html examples/fun/*.html examples/fun/img/*.png
          $ git commit -m 'Publishing the example fun/HelloWorld'
 
+         Once you have checked everything and want your
+         changes to go live, push to the master branch of
+         the website:
+
+         $ git push origin master
+
+
 
 
 3.  HOW TO PUBLISH A GUIDE CHAPTER.
@@ -123,6 +130,12 @@ Contents.
          $ git status
          $ git add docs/guide/*.html docs/guide/img/*.png
          $ git commit -m 'Publishing a Guide chapter'
+         
+         Once you have checked everything and want your
+         changes to go live, push to the master branch of
+         the website:
+
+         $ git push origin master
 
 
 
@@ -182,3 +195,11 @@ Contents.
          $ git status
          $ git add index.html news/*.html
          $ git commit -m 'Adding a news item'
+         $ git push origin master
+
+         Once you have checked everything and want your
+         changes to go live, push to the master branch of
+         the website:
+
+         $ git push origin master
+
