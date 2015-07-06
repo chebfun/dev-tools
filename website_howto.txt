@@ -2,7 +2,6 @@ WEBSITE HOW-TO
 Hrothgar, June 2015
 Get in touch with   hrothgarrrr@gmail.com   for questions.
 ----------------------------------------------------------
-Modifications done by Javed on June 17, 2015
 
 Contents.
 
@@ -15,6 +14,10 @@ Contents.
 * * *
 
 1.  HOW TO INSTALL THE WEBSITE ON YOUR MACHINE.
+
+    The following instruction assumes you do not already have
+    local copies of the guide and examples repos.  If you already have
+    them, the procedure is different (talk to Anthony).
 
     Download the "chebsite_setup.m" script from the "chebfun/dev-tools" repo
     on GitHub. If you run the chebsite_setup script from a directory called
@@ -56,6 +59,10 @@ Contents.
 
 2.  HOW TO PUBLISH AN EXAMPLE.
 
+    0.   First note: before publishing, you should push the new or
+         revised example to GitHub in the usual fashion (using branch
+         development).
+
     i.   From MATLAB, move to the directory my_folder/chebsite/examples and then
          execute the make_example function:
 
@@ -68,7 +75,9 @@ Contents.
          build the website. The script will output the names of all files
          modified since the last time you built the website. (The first time
          the build script runs, however, there will be a lot of output, since
-         all the output files are new.)
+         all the output files are new.)  (Indeed, *every* time the build
+         script runs, a lot of output is produced.  Anthony hopes to
+         discuss this matter with Hrothgar.)
 
          $ python BUILD.py
 
@@ -85,6 +94,7 @@ Contents.
          $ cd _build
          $ git status
          $ git add examples/*.html examples/fun/*.html examples/fun/img/*.png
+         $ git add index.html examples/fun/*.m examples/fun/img/*.m
          $ git commit -m 'Publishing the example fun/HelloWorld'
 
          Once you have checked everything and want your
