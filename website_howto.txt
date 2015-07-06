@@ -94,7 +94,7 @@ Contents.
          $ cd _build
          $ git status
          $ git add examples/*.html examples/fun/*.html examples/fun/img/*.png
-         $ git add index.html examples/fun/*.m examples/fun/img/*.m
+         $ git add index.html examples/fun/*.m examples/fun/img/*.html
          $ git commit -m 'Publishing the example fun/HelloWorld'
 
          Once you have checked everything and want your
