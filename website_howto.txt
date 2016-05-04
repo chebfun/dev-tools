@@ -10,7 +10,6 @@ Contents.
     3. How to publish a Guide chapter.
     4. How to add a news item.
 
-
 * * *
 
 1.  HOW TO INSTALL THE WEBSITE ON YOUR MACHINE.
@@ -19,20 +18,20 @@ Contents.
     local copies of the guide and examples repos.  If you already have
     them, the procedure is different (talk to Anthony).
 
-    Download the "chebsite_setup.m" script from the "chebfun/dev-tools" repo
-    on GitHub. If you run the chebsite_setup script from a directory called
+    Download the "chebsite-setup.sh" script from the "chebfun/dev-tools" repo
+    on GitHub. If you run the chebsite-setup script from a directory called
     "my_folder", then the resulting directory structure for the website will
     end up looking like this:
 
         my_folder
-          |-- chebsite_setup.m
+          |-- chebsite-setup.sh
           |-- chebsite
           |     |-- _build
           |     |-- ...
           |-- examples
           |-- guide
 
-    As you can see, the chebsite_setup script will create a few directories in
+    As you can see, the chebsite-setup script will create a few directories in
     the place where it's executed. Two of those directories are for the
     examples and guide repos (these are necessary in order to make examples or
     publish Guide chapters). The final directory, called "chebsite" by
@@ -102,7 +101,6 @@ Contents.
          the website:
 
          $ git push origin master
-
 
 
 
@@ -212,4 +210,3 @@ Contents.
          the website:
 
          $ git push origin master
-
