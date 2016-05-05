@@ -58,9 +58,19 @@ Contents.
 
 2.  HOW TO PUBLISH AN EXAMPLE.
 
-    0.   First note: before publishing, you should push the new or
-         revised example to GitHub in the usual fashion (using branch
-         development).
+    0.   Before publishing, you should push the new or revised example to
+         GitHub in the usual fashion (using branch development).  You should
+         also make sure you have the latest copy of the chebsite scripts and
+         the website from GitHub:
+
+         $ cd chebsite
+         $ git pull origin master
+         $ cd _build
+         $ git pull origin master
+
+         If something new from GitHub conflicts with changes (committed or
+         uncommitted) that you have made locally, these commands will fail,
+         and you will need to address the conflicts manually.
 
     i.   From MATLAB, move to the directory my_folder/chebsite/examples and then
          execute the make_example function:
@@ -109,6 +119,12 @@ Contents.
     The procedure for publishing a Guide chapter is basically the same as the
     procedure for publishing an Example.
 
+    0.   Before publishing, you should push the new or revised chapter to
+         GitHub in the usual fashion (using branch development).  You should
+         also make sure you have the latest copy of the chebsite scripts and
+         the website from GitHub.  (See item 0 under "HOW TO PUBLISH AN
+         EXAMPLE", above.)
+
     i.   From MATLAB, move to the directory my_folder/chebsite/docs/guide and
          then execute the make_chapters function. The input to the function is
          a vector of integers specifying which chapters to publish.
@@ -138,7 +154,7 @@ Contents.
          $ git status
          $ git add docs/guide/*.html docs/guide/img/*.png
          $ git commit -m 'Publishing a Guide chapter'
-         
+
          Once you have checked everything and want your
          changes to go live, push to the master branch of
          the website:
@@ -151,6 +167,10 @@ Contents.
 
     To add a news item, create a Markdown file for the news item and then
     build the website.
+
+    0.   Before publishing, you should make sure you have the latest copy of
+         the chebsite scripts and the website from GitHub.  (See item 0 under
+         "HOW TO PUBLISH AN EXAMPLE", above.)
 
     i.   News items are stored in the "chebsite/news" directory. Take a look
          at the existing news items for examples. (I usually just copy one of
