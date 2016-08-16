@@ -81,6 +81,9 @@ git clone https://github.com/chebfun/guide.git guide \
 	|| die "Could not clone guide repository."
 
 # Install the needed Python modules.
+#
+# NB:  The "wheel" package needs to be installed/upgraded first.
+pip install --user --upgrade wheel
 pip install --user MarkupSafe Jinja2 PyYAML Markdown
 
 # Need to handle the python_dateutil module a little differently, as it's
