@@ -58,6 +58,10 @@ Contents.
 
 2.  HOW TO PUBLISH AN EXAMPLE.
 
+NOTE.  The following detailed procedure is no longer the recommended
+method.  Chebfun team members have access to a script publish-example.sh
+that automates this process, and we recommend use of that instead.
+
     0.   Before publishing, you should push the new or revised example to
          GitHub in the usual fashion (using branch development).  You should
          also make sure you have the latest copy of the chebsite scripts and
@@ -115,6 +119,11 @@ Contents.
 
 
 3.  HOW TO PUBLISH A GUIDE CHAPTER.
+
+NOTE.  As with publishing examples, the following detailed procedure is no
+longer the recommended method.  Chebfun team members have access to a script
+publish-example.sh that automates this publication of guide chapters as
+well as examples, and we recommend use of that instead.
 
     The procedure for publishing a Guide chapter is basically the same as the
     procedure for publishing an Example.
